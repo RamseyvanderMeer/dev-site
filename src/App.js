@@ -1,6 +1,7 @@
 import './App.scss';
 import {useEffect} from 'react'
 import WebFont from 'webfontloader';
+import {Header, Footer, About} from './components/index'
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
 
   return (
     <div className="App">
-      <p>test for font</p>
+      <Header />
+        <About />
+      <Footer />
     </div>
   );
 }
