@@ -1,7 +1,7 @@
 import './App.scss';
 import {useEffect} from 'react'
 import WebFont from 'webfontloader';
-import {Header, Footer, About} from './components/index'
+import {Header, Footer, About, Projects} from './components/index'
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Droid Sans', 'Chilanka']
+        families: ['Mr Eaves Sans', 'Handlee']
       }
     });
    }, []);
@@ -18,6 +18,7 @@ function App() {
     <div className="App">
       <Header />
         <About />
+        <Projects />
       <Footer />
     </div>
   );
