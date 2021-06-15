@@ -1,7 +1,7 @@
 import './App.scss';
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import WebFont from 'webfontloader';
-import {Header, Footer, About, Projects} from './components/index'
+import { Header, Footer, About, Projects, Contact } from './components/index'
 
 
 function App() {
@@ -12,14 +12,27 @@ function App() {
         families: ['Mr Eaves Sans', 'Handlee']
       }
     });
-   }, []);
+  }, []);
 
   return (
     <div className="App">
       <Header />
-        <About />
-        <Projects />
-      <Footer />
+      <body>
+        <div className="container">
+          <section>
+          <About />
+          </section>
+          <section>
+          <Projects />
+          </section>
+          <section>
+          <Contact />
+          </section>
+          <section>
+          <Footer />
+          </section>
+        </div>
+      </body>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './main.scss'
+import './Header.scss'
 import Logo from '../img/Logo.svg'
 
 const Header = () => {
@@ -42,6 +42,7 @@ const Header = () => {
                     <div className={expanded ? "bar3 animateBar" : " bar3"}></div>
                 </div>
             </div>
+            <div className="spacing" />
         </header>
     )
 }

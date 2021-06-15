@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './Projects.scss'
 
-class Projects extends Component {
-    render() {
+const Project = () => {
         return (
             <div>
-                <p>Projects</p>
+                Project
             </div>
-        );
-    }
+        )
 }
 
-export default Projects;
+export default Project;

@@ -1,4 +1,8 @@
-@import "../colors";
+@import "../Variables.scss";
+
+.spacing{
+    height: $navbar-height;
+}
 
 .bar1,
 .bar2,
@@ -27,9 +31,9 @@
 }
 
 .main-header {
-    position: sticky;
+    position: fixed;
     width: 100vw;
-    height: 4.5em;
+    height: $navbar-height;
     background-color: $light-gray;
     z-index: 100;
     white-space: nowrap;
@@ -44,7 +48,8 @@
         font-size: 1.45em;
         font-weight: 700;
         &__img {
-            width: 1.85em;
+            display: flex;
+            width: 1.75em;
             padding: 0 0.5em 0 0;
         }
     }
@@ -81,7 +86,6 @@
     }
 
     @media screen and (max-width: 840px) {
-        font-size: 1.125rem;
 
         &__nav {
             flex-direction: column;
