@@ -1,6 +1,57 @@
-@import '../../Variables.scss';
+@import "../../Variables.scss";
 
-.about-container{
+.about-container {
     width: 100vw;
     height: calc(100vh - #{$navbar-height});
+
+    &__image {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border: 1px solid;
+        z-index: 10;
+        &__container {
+            position: relative;
+            top: calc(#{$relative-size} / 7.5);
+            left: calc(#{$relative-size} / 6);
+        }
+        &__ear {
+            position: absolute;
+            top: calc(#{$relative-size} / 2.3);
+            left: calc(#{$relative-size} / 50);
+            width: calc(#{$relative-size} / 1.8);
+        }
+        &__eye {
+            position: absolute;
+            top: calc(#{$relative-size} / 4.4);
+            left: calc(#{$relative-size} / 1.85);
+            width: calc(#{$relative-size} / 2.5);
+        }
+        &__face {
+            position: absolute;
+            width: calc(#{$relative-size} / 1);
+            left: calc(#{$relative-size} / 14);
+        }
+    }
+    &__text {
+        position: absolute;
+        top: calc(#{$relative-size} / 2.3);
+        right: calc(#{$relative-size} / 50);
+        width: $relative-size;
+        padding: calc(#{$relative-size} / 20);
+        border-radius: calc(#{$relative-size} / 15);
+        background-color: $light;
+        border: 1px solid;
+        &__title{
+            font-size: calc(#{$relative-size} / 15);
+            font-weight: 800;
+        }
+        &__body{
+
+        }
+    }
 }
+
+// container{
+//     position: relative;
+// }
