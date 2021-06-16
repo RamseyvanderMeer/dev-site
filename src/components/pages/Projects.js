@@ -1,12 +1,12 @@
 import React from 'react';
 import './Projects.scss'
 
-const Project = () => {
+const Projects = () => {
         return (
-            <div>
+            <div id="projects" className="project-container">
                 Project
             </div>
         )
 }
 
-export default Project;
+export default Projects;

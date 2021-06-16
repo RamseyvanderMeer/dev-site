@@ -1,1 +1,6 @@
 @import '../Variables.scss';
+
+.footer-container{
+    width: 100vw;
+    height: calc(100vh - #{$navbar-height});
+}

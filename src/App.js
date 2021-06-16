@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import WebFont from 'webfontloader';
 import { Header, Footer, About, Projects, Contact } from './components/index'
 
-
 function App() {
 
   useEffect(() => {
@@ -17,22 +16,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <body>
-        <div className="container">
-          <section>
-          <About />
-          </section>
-          <section>
-          <Projects />
-          </section>
-          <section>
-          <Contact />
-          </section>
-          <section>
-          <Footer />
-          </section>
-        </div>
-      </body>
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }
