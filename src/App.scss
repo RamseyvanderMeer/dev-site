@@ -1,4 +1,9 @@
+@import "./Variables.scss";
+
+body{
+  margin: 0;
+}
 .App {
-  text-align: center;
-  font-family: 'Chilanka';
+  font-family: 'Handlee';
+  overflow: hidden;
 }

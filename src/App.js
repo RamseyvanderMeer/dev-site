@@ -1,21 +1,25 @@
 import './App.scss';
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import WebFont from 'webfontloader';
-
+import { Header, Footer, About, Projects, Contact } from './components/index'
 
 function App() {
 
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Droid Sans', 'Chilanka']
+        families: ['Mr Eaves Sans', 'Handlee']
       }
     });
-   }, []);
+  }, []);
 
   return (
     <div className="App">
-      <p>test for font</p>
+      <Header />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }
