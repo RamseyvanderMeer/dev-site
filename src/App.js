@@ -1,7 +1,7 @@
 import './App.scss';
 import { useEffect } from 'react'
 import WebFont from 'webfontloader';
-import { Header, Footer, About, Projects, Contact } from './components/index'
+import { Header, Footer, About, Projects, Contact, Photography } from './components/index'
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
       <Header />
       <About />
       <Projects />
+      <Photography />
       <Contact />
       <Footer />
     </div>

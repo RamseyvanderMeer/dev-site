@@ -44,7 +44,7 @@
     &__title {
         display: flex;
         padding: 0 2rem 0 1rem;
-        color: $dark-gray;
+        color: $dark;
         z-index: 1;
         font-size: 1.45em;
         font-weight: 700;
@@ -58,7 +58,19 @@
 
 
     &__button {
+        font-size: 1.1em;
+        font-weight: 500;
         cursor: pointer;
+        text-decoration: none;
+        color: $dark;
+        padding: .35em .85em;
+        border-radius: 1em;
+    }
+    &__button:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: $contrast;
+        background-color: $dark-gray;
     }
 
     &__nav {

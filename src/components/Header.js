@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.scss'
 import Logo from '../img/Logo.svg'
+import {Link} from 'react-scroll'
 
 const Header = () => {
 
@@ -23,16 +24,16 @@ const Header = () => {
 
                     <ul className="main-header__nav__links">
                         <li className="main-header__nav__link">
-                            <div href="/" className="main-header__button" href="/about" >About Me</div>
+                            <Link activeClass="active" to="about" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/about" >About Me</Link>
                         </li>
                         <li className="main-header__nav__link">
-                            <div href="/" className="main-header__button" href="/projects" >Projects</div>
+                            <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/projects" >Projects</Link>
                         </li>
                         <li className="main-header__nav__link">
-                            <div href="/" className="main-header__button" href="/photography" >Photography</div>
+                            <Link activeClass="active" to="photography" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/photography" >Photography</Link>
                         </li>
                         <li className="main-header__nav__link">
-                            <div href="/" className="main-header__button" href="/contact" >Contact</div>
+                            <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/contact" >Contact</Link>
                         </li>
                     </ul>
                 </nav>
