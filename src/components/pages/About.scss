@@ -17,27 +17,43 @@
         }
         &__ear {
             position: absolute;
-            top: calc(#{$relative-size} / 2.3);
+            top: calc(#{$relative-size} / 2);
             left: calc(#{$relative-size} / 50);
             width: calc(#{$relative-size} / 1.8);
         }
         &__eye {
             position: absolute;
-            top: calc(#{$relative-size} / 4.4);
+            top: calc(#{$relative-size} / 4.1);
             left: calc(#{$relative-size} / 1.85);
             width: calc(#{$relative-size} / 2.5);
         }
         &__face {
             position: absolute;
             width: calc(#{$relative-size} / 1);
+            top: calc(#{$relative-size} / 15);
             left: calc(#{$relative-size} / 14);
+        }
+        &__particles{
+            position: absolute;
+            width: 100vw;
+            height: calc(100vh - #{$navbar-height});
+            opacity: 0.25;
         }
     }
     &__text {
         position: absolute;
-        top: calc(#{$relative-size} / 1);
+        top: calc(#{$relative-size} /1);
         right: calc(#{$relative-size} / 50);
-        width: $relative-size;
+        width: calc(#{$relative-size} / 1.25);
+        padding: calc(#{$relative-size} / 20);
+        border-radius: calc(#{$relative-size} / 15);
+        background-color: $light;
+        border: 1px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.9;
         &__title {
             font-size: calc(#{$relative-size} / 10);
             font-weight: 800;
@@ -50,54 +66,10 @@
             margin: 0;
         }
         &__image {
-            width: calc(#{$relative-size} / 3);
+            width: calc(#{$relative-size} / 6);
             border-radius: calc(#{$relative-size} / 6);
         }
     }
-    &__pattern {
-        z-index: 10;
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        &__image {
-            top: 0;
-            left: 0;
-        }
-    }
 }
 
-.gradient-border {
-    --borderWidth: 3px;
-    position: relative;
-    padding: calc(#{$relative-size} / 20);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.gradient-border:after {
-    content: "";
-    position: absolute;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-    border-radius: calc(2 * var(--borderWidth));
-    z-index: -1;
-    animation: animatedgradient 3s ease alternate infinite;
-    background-size: 300% 300%;
-}
 
-@keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}

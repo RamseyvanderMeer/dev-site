@@ -6,6 +6,7 @@ import face from '../../img/3.svg'
 import { useSpring, animated, config } from 'react-spring';
 import ramsey from '../../img/ramseyHead.jpg'
 import pattern from '../../img/pattern.svg'
+import Particles from 'react-particles-js'
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1]
 const trans1 = (x, y, s) => `perspective(1250px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
@@ -20,6 +21,42 @@ const About = () => {
                 onMouseMove={({ clientX: x, clientY: y }) => (set({ xys: calc(x, y) }))}
                 onMouseLeave={() => set({ xys: [0, 0, 1] })}
             >
+                <Particles className="about-container__image__particles" id="particles-js"
+                    params={{
+                        particles: {
+                            number: {
+                                value: 50,
+                                density: {
+                                    enable: true,
+                                    value_area: 1000
+                                }
+                            },
+                            color: {
+                                value: 'black'
+                            },
+                            opacity: {
+                                value: 0.05,
+                                anim: {
+                                    enable: true
+                                }
+                            },
+                            size: {
+                                value: 3,
+                                random: true,
+                                anim: {
+                                    enable: true,
+                                    speed: 1
+                                }
+                            },
+                            line_linked: {
+                                enable: false
+                            },
+                            move: {
+                                speed: 0.075
+                            }
+                        }
+                    }}
+                />
                 <div className="about-container__image__container">
                     <animated.img style={{
                         transform: props.xys.interpolate(trans1)
@@ -34,15 +71,9 @@ const About = () => {
 
             </div>
             <div className="about-container__text">
-                <div className="gradient-border">
-                    <p className="about-container__text__title">Hello, I'm Ramsey!</p>
-                    <img src={ramsey} alt="" className="about-container__text__image" />
-                    <p className="about-container__text__body">I'm Originally from the Bay Area and attend the University of Illinois Urbana Champaign for Electrical engineering.</p>
-                </div>
-            </div>
-            <div class="about-container__pattern">
-                <img src={pattern} alt="" className="about-container__pattern__image" />
-                <img src={pattern} />
+                <p className="about-container__text__title">Hello, I'm Ramsey!</p>
+                <img src={ramsey} alt="" className="about-container__text__image" />
+                <p className="about-container__text__body">I'm Originally from the Bay Area and attend the University of Illinois Urbana Champaign for Electrical engineering.</p>
             </div>
         </div>
     )
