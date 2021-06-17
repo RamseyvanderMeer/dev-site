@@ -4,7 +4,8 @@ import ear from '../../img/1.svg'
 import eye from '../../img/2.svg'
 import face from '../../img/3.svg'
 import { useSpring, animated, config } from 'react-spring';
-import styled from 'styled-components';
+import ramsey from '../../img/ramseyHead.jpg'
+import pattern from '../../img/pattern.svg'
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1]
 const trans1 = (x, y, s) => `perspective(1250px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
@@ -33,7 +34,13 @@ const About = () => {
 
             </div>
             <div className="about-container__text">
-                <p className="about-container__text__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eius numquam porro voluptates sint accusamus recusandae iusto voluptatum. Dolore quod doloribus, animi quos et non ad. Eligendi exercitationem doloremque sed.</p>
+                <p className="about-container__text__title">Hello, I'm Ramsey!</p>
+                <img src={ramsey} alt="" className="about-container__text__image" />
+                <p className="about-container__text__body">I'm Originally from the Bay Area and attend the University of Illinois Urbana Champaign for Electrical engineering.</p>
+            </div>
+            <div class="about-container__pattern">
+                <img src={pattern} alt="" className="about-container__pattern__image" />
+                <img src={pattern} />
             </div>
         </div>
     )
