@@ -13,7 +13,7 @@ const trans2 = (x, y, s) => `perspective(1750px) rotateX(${x}deg) rotateY(${y}de
 const trans3 = (x, y, s) => `perspective(1500px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 const About = () => {
-    const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 25, tension: 500, friction: 350 } }))
+    const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 50, tension: 500, friction: 350 } }))
     return (
         <div id="about" className="about-container">
             <div className="about-container__image"
@@ -34,9 +34,11 @@ const About = () => {
 
             </div>
             <div className="about-container__text">
-                <p className="about-container__text__title">Hello, I'm Ramsey!</p>
-                <img src={ramsey} alt="" className="about-container__text__image" />
-                <p className="about-container__text__body">I'm Originally from the Bay Area and attend the University of Illinois Urbana Champaign for Electrical engineering.</p>
+                <div className="gradient-border">
+                    <p className="about-container__text__title">Hello, I'm Ramsey!</p>
+                    <img src={ramsey} alt="" className="about-container__text__image" />
+                    <p className="about-container__text__body">I'm Originally from the Bay Area and attend the University of Illinois Urbana Champaign for Electrical engineering.</p>
+                </div>
             </div>
             <div class="about-container__pattern">
                 <img src={pattern} alt="" className="about-container__pattern__image" />
