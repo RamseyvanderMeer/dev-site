@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Mr Eaves Sans', 'Handlee']
+        families: ['Montserrat', 'Roboto']
       }
     });
   }, []);
