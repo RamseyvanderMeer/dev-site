@@ -8,19 +8,28 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Montserrat', 'Roboto']
+        families: ['Montserrat', 'Molengo', 'Varela']
       }
     });
   }, []);
 
   return (
-    <div className="App">
-      <Header />
-      <About />
-      <Projects />
-      <Photography />
-      <Contact />
-      <Footer />
+    <div>
+<Header />
+    <div className="container">
+          <section className="one">
+            <h1>First</h1>
+          </section>
+          <section className="two">
+            <h1>second</h1>
+          </section>
+          <section class="three">
+            <h1>third</h1>
+          </section>
+          <section className="four">
+            <h1>fourth</h1>
+          </section>
+    </div>
     </div>
   );
 }

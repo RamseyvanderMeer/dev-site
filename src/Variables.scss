@@ -6,3 +6,4 @@ $light:#F2F2F2;
 $navbar-height: 4.5em;
 $contrast: #85A68E;
 $relative-size: 15vw;
+$page-height: calc(100vh - #{$navbar-height});

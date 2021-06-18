@@ -1,9 +1,43 @@
 @import "./Variables.scss";
 
-body{
-  margin: 0;
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
-.App {
-  font-family: 'Montserrat';
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   overflow: hidden;
+}
+section{
+  height: calc(#{$page-height} + 1vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  scroll-snap-align: start;
+}
+.container{
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+  //junk may need fixing
+  height: calc(#{$page-height} + 1.05em);
+}
+.one{
+  background-color:cornflowerblue;
+}
+.two{
+  background-color: aquamarine;
+}
+.three{
+  background-color: bisque;
+}
+.four{
+  background-color: burlywood;
 }
