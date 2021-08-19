@@ -1,40 +1,47 @@
 import React from 'react';
 import './Header.scss'
 import Logo from '../img/Logo.svg'
-import {Link} from 'react-scroll'
 
 const Header = () => {
 
     const [expanded, setExpanded] = React.useState(false)
+    const waveClairity = 15
 
     const toggleDropdown = () => {
         setExpanded(!expanded);
     }
 
-    
+
     function init() {
-        setInterval(OnDraw, 15);
+        setInterval(OnDraw, waveClairity);
     }
 
     var time = 1000;
-    var color = "#A6A6A6";
+    var width = window.innerWidth
+    var height = window.innerHeight
+
 
     function OnDraw() {
         time = time + 0.015;
         var canvas = document.getElementById("mycanvas");
         var dataLine = canvas.getContext("2d");
-
+            window.onresize = function (event) {
+                canvas = document.getElementById('mycanvas');
+                canvas.width = window.innerWidth;
+                width = window.innerWidth;
+            }
         dataLine.clearRect(0, 0, canvas.width, canvas.height);
 
         dataLine.beginPath();
-        for (let i = -100; i <= canvas.width; i++) {
+        for (let i = -600; i <= width; i++) {
+
             let waveA = Math.sin(time + i * 0.0211)
             let waveB = Math.sin(time + i * 0.028)
             let waveC = Math.sin(time + i * 0.015)
             dataLine.lineTo(i * 2.5, canvas.height * 0.5 + waveA * waveB * waveC * 66);
         }
-        dataLine.lineTo(document.documentElement.clientWidth, document.documentElement.clientHeight);
-        var my_gradient = dataLine.createLinearGradient(0, 0, document.documentElement.clientWidth * .5, 0);
+        dataLine.lineTo(canvas.width, canvas.height);
+        var my_gradient = dataLine.createLinearGradient(0, 0, canvas.width * .5, 0);
         my_gradient.addColorStop(0, "#C9D6FF");
         my_gradient.addColorStop(1, "#E2E2E2");
         dataLine.fillStyle = my_gradient;
@@ -60,16 +67,16 @@ const Header = () => {
 
                     <ul className="main-header__nav__links">
                         <li className="main-header__nav__link">
-                            <Link activeClass="active" to="about" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/about" >About Me</Link>
+                            <button activeClass="active" to="about" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/about" >About Me</button>
                         </li>
                         <li className="main-header__nav__link">
-                            <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/projects" >Projects</Link>
+                            <button activeClass="active" to="projects" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/projects" >Projects</button>
                         </li>
                         <li className="main-header__nav__link">
-                            <Link activeClass="active" to="photography" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/photography" >Photography</Link>
+                            <button activeClass="active" to="photography" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/photography" >Photography</button>
                         </li>
                         <li className="main-header__nav__link">
-                            <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/contact" >Contact</Link>
+                            <button activeClass="active" to="contact" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/contact" >Contact</button>
                         </li>
                     </ul>
                 </nav>
