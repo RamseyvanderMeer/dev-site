@@ -1,0 +1,200 @@
+@import "../Variables.scss";
+
+.spacing {
+    position: relative;
+    height: $navbar-height;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    background-color: $dark;
+    width: 35px;
+    padding: 1px;
+    margin: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.animateBar.bar1 {
+    transform: rotate(-45deg) translate(-9px, 5px);
+    background: $dark;
+    width: 40px;
+}
+
+.animateBar.bar2 {
+    opacity: 0;
+}
+
+.animateBar.bar3 {
+    transform: rotate(45deg) translate(-8px, -5px);
+    background-color: $dark;
+    width: 40px;
+}
+
+.main-header {
+    position: fixed;
+    width: 100vw;
+    height: $navbar-height * 0.75;
+    background: #C9D6FF; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #C9D6FF, #E2E2E2 50%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left,#C9D6FF ,#E2E2E2 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: 100;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__wave {
+        transform: rotate(180deg);
+        position: relative;
+        top: -150px;
+        background-color: transparent;
+        pointer-events: none; 
+    }
+
+    &__title {
+        display: flex;
+        padding: 0 2rem 0 1rem;
+        color: $dark;
+        z-index: 1;
+        font-size: 1.45em;
+        font-weight: 700;
+
+        &__img {
+            display: flex;
+            width: 1.75em;
+            padding: 0 0.5em 0 0;
+        }
+    }
+
+    &__button {
+        font-size: 1.1em;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        color: $dark;
+        padding: 0.5em 1.1em;
+        border-radius: 1em;
+    }
+    &__button:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: $contrast;
+        background-color: $dark-gray;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3rem;
+
+        &__links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 50vw;
+            list-style: none;
+        }
+
+        /* Dropdown menu toggle for responsive navbar */
+        &__menu-icon {
+            display: none !important;
+            position: fixed;
+            right: 2%;
+            top: 1.25rem;
+            color: gray !important;
+            cursor: pointer !important;
+            user-select: none;
+        }
+    }
+
+    @media screen and (max-width: 840px) {
+        &__nav {
+            flex-direction: column;
+            justify-content: center;
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: white;
+            clip-path: circle(4rem at 95% -20%);
+
+            &__flex-helper {
+                display: none;
+            }
+
+            &__links {
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 50%;
+            }
+
+            &__link {
+                opacity: 0;
+            }
+
+            &__cta {
+                opacity: 0;
+            }
+
+            &__menu-icon {
+                display: block !important;
+            }
+        }
+
+        &.expanded {
+            .main-header__nav {
+                clip-path: circle(2000px at 100% -20%);
+                transition: all 0.75s ease-out;
+                background-color: $light;
+            }
+            .main-header{
+                &__button {
+                    color: $dark;
+                }
+                &__button:hover {
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: $contrast;
+                    background-color: $dark-gray;
+                }
+            }
+
+            .main-header__nav__link {
+                opacity: 1;
+                transition: opacity 0.6s linear;
+
+                @for $i from 1 to 6 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: 0.1s + $i * 0.15s;
+                    }
+                }
+            }
+
+            .main-header__nav__cta {
+                opacity: 1;
+                transition: opacity 0.6s linear;
+                transition-delay: 1s;
+            }
+        }
+
+        &.collapsed {
+            .main-header__nav {
+                transition: all 0.75s ease-out;
+            }
+
+            .main-header__nav__link {
+                opacity: 0;
+                transition: opacity 0.4s linear;
+            }
+
+            .main-header__nav__cta {
+                opacity: 0;
+                transition: opacity 0.4s linear;
+            }
+        }
+    }
+}

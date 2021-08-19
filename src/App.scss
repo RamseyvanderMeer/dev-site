@@ -1,4 +1,16 @@
-.App {
-  text-align: center;
-  font-family: 'Chilanka';
+@import "./Variables.scss";
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
