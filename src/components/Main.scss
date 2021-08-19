@@ -1,3 +1,5 @@
+@import '../Variables.scss';
+
 .main {
     &__box{
         border-radius: 0.25vw;
@@ -16,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #202020;
+    background-color: $dark-gray;
     overflow: hidden;
   }
   .main ul li {

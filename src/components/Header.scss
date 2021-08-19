@@ -27,7 +27,7 @@
 
 .animateBar.bar3 {
     transform: rotate(45deg) translate(-8px, -5px);
-    background: $dark;
+    background-color: $dark;
     width: 40px;
 }
 
@@ -148,7 +148,18 @@
             .main-header__nav {
                 clip-path: circle(2000px at 100% -20%);
                 transition: all 0.75s ease-out;
-                background-color: $gray;
+                background-color: $light;
+            }
+            .main-header{
+                &__button {
+                    color: $dark;
+                }
+                &__button:hover {
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: $contrast;
+                    background-color: $dark-gray;
+                }
             }
 
             .main-header__nav__link {

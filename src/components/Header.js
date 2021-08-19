@@ -12,7 +12,7 @@ const Header = () => {
     }
 
 
-    function init() {
+    const init = () => {
         setInterval(OnDraw, waveClairity);
     }
 
@@ -21,7 +21,7 @@ const Header = () => {
     var height = window.innerHeight
 
 
-    function OnDraw() {
+    const OnDraw = () => {
         time = time + 0.015;
         var canvas = document.getElementById("mycanvas");
         var dataLine = canvas.getContext("2d");
@@ -67,16 +67,16 @@ const Header = () => {
 
                     <ul className="main-header__nav__links">
                         <li className="main-header__nav__link">
-                            <button activeClass="active" to="about" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/about" >About Me</button>
+                            <a className="main-header__button" href="/about" >About Me</a>
                         </li>
                         <li className="main-header__nav__link">
-                            <button activeClass="active" to="projects" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/projects" >Projects</button>
+                            <a className="main-header__button" href="/projects" >Projects</a>
                         </li>
                         <li className="main-header__nav__link">
-                            <button activeClass="active" to="photography" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/photography" >Photography</button>
+                            <a className="main-header__button" href="/photography" >Photography</a>
                         </li>
                         <li className="main-header__nav__link">
-                            <button activeClass="active" to="contact" spy={true} smooth={true} duration={500} offset={-75} className="main-header__button" href="/contact" >Contact</button>
+                            <a className="main-header__button" href="/contact" >Contact</a>
                         </li>
                     </ul>
                 </nav>
