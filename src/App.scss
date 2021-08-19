@@ -14,29 +14,3 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-section{
-  height: calc(#{$page-height} + 1.05em);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  scroll-snap-align: center;
-}
-.container{
-  scroll-snap-type:y mandatory;
-  overflow: scroll;
-  //junk may need fixing
-  height: calc(#{$page-height} + 1.05em);
-}
-.one{
-  background-color:cornflowerblue;
-}
-.two{
-  background-color: aquamarine;
-}
-.three{
-  background-color: bisque;
-}
-.four{
-  background-color: burlywood;
-}

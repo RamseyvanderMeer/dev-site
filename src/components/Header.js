@@ -11,6 +11,38 @@ const Header = () => {
         setExpanded(!expanded);
     }
 
+    
+    function init() {
+        setInterval(OnDraw, 15);
+    }
+
+    var time = 1000;
+    var color = "#A6A6A6";
+
+    function OnDraw() {
+        time = time + 0.015;
+        var canvas = document.getElementById("mycanvas");
+        var dataLine = canvas.getContext("2d");
+
+        dataLine.clearRect(0, 0, canvas.width, canvas.height);
+
+        dataLine.beginPath();
+        for (let i = -100; i <= canvas.width; i++) {
+            let waveA = Math.sin(time + i * 0.0211)
+            let waveB = Math.sin(time + i * 0.028)
+            let waveC = Math.sin(time + i * 0.015)
+            dataLine.lineTo(i * 2.5, canvas.height * 0.5 + waveA * waveB * waveC * 66);
+        }
+        dataLine.lineTo(document.documentElement.clientWidth, document.documentElement.clientHeight);
+        dataLine.fillStyle = color;
+        // dataLine.fillStyle = "red";
+        // dataLine.fill();
+        dataLine.fill();
+        dataLine.closePath();
+    }
+
+    init()
+
     return (
         <header>
             <div className={`main-header ${expanded ? "expanded" : "collapsed"}`}>
@@ -44,6 +76,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="spacing" />
+            <canvas id="mycanvas" className="main-header__wave" width={document.documentElement.clientWidth} height="400"></canvas>
         </header>
     )
 }

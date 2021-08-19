@@ -34,13 +34,19 @@
 .main-header {
     position: fixed;
     width: 100vw;
-    height: $navbar-height;
+    height: $navbar-height * 0.55;
     background-color: $light-gray;
     z-index: 100;
     white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &__wave{
+        transform: rotate(180deg);
+        position: relative;
+        top: -150px;
+    }
 
     &__title {
         display: flex;
@@ -64,7 +70,7 @@
         cursor: pointer;
         text-decoration: none;
         color: $dark;
-        padding: .35em .85em;
+        padding: .5em 1.1em;
         border-radius: 1em;
     }
     &__button:hover {
