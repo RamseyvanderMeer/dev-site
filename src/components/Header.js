@@ -17,28 +17,25 @@ const Header = () => {
     }
 
     var time = 1000;
-    var width = window.innerWidth
-    var height = window.innerHeight
 
 
     const OnDraw = () => {
-        time = time + 0.015;
+        time = time + 0.0075;
         var canvas = document.getElementById("mycanvas");
         var dataLine = canvas.getContext("2d");
             window.onresize = function (event) {
                 canvas = document.getElementById('mycanvas');
                 canvas.width = window.innerWidth;
-                width = window.innerWidth;
             }
         dataLine.clearRect(0, 0, canvas.width, canvas.height);
 
         dataLine.beginPath();
-        for (let i = -600; i <= width; i++) {
+        for (let i = -400; i <= canvas.width; i++) {
 
             let waveA = Math.sin(time + i * 0.0211)
             let waveB = Math.sin(time + i * 0.028)
             let waveC = Math.sin(time + i * 0.015)
-            dataLine.lineTo(i * 2.5, canvas.height * 0.5 + waveA * waveB * waveC * 66);
+            dataLine.lineTo(i * 3, canvas.height * 0.5 + waveA * waveB * waveC * 66);
         }
         dataLine.lineTo(canvas.width, canvas.height);
         var my_gradient = dataLine.createLinearGradient(0, 0, canvas.width * .5, 0);

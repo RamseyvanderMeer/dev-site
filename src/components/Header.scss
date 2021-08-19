@@ -49,6 +49,7 @@
         position: relative;
         top: -150px;
         background-color: transparent;
+        pointer-events: none; 
     }
 
     &__title {
