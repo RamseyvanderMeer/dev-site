@@ -1,6 +1,7 @@
 @import "../Variables.scss";
 
-.spacing{
+.spacing {
+    position: relative;
     height: $navbar-height;
 }
 
@@ -26,29 +27,39 @@
 
 .animateBar.bar3 {
     transform: rotate(45deg) translate(-8px, -5px);
-    background: $dark;
+    background-color: $dark;
     width: 40px;
 }
 
 .main-header {
     position: fixed;
     width: 100vw;
-    height: $navbar-height;
-    background-color: $light-gray;
+    height: $navbar-height * 0.75;
+    background: #C9D6FF; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #C9D6FF, #E2E2E2 50%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left,#C9D6FF ,#E2E2E2 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     z-index: 100;
     white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    &__wave {
+        transform: rotate(180deg);
+        position: relative;
+        top: -150px;
+        background-color: transparent;
+        pointer-events: none; 
+    }
+
     &__title {
         display: flex;
         padding: 0 2rem 0 1rem;
-        color: $dark-gray;
+        color: $dark;
         z-index: 1;
         font-size: 1.45em;
         font-weight: 700;
-        
+
         &__img {
             display: flex;
             width: 1.75em;
@@ -56,9 +67,20 @@
         }
     }
 
-
     &__button {
+        font-size: 1.1em;
+        font-weight: 500;
         cursor: pointer;
+        text-decoration: none;
+        color: $dark;
+        padding: 0.5em 1.1em;
+        border-radius: 1em;
+    }
+    &__button:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: $contrast;
+        background-color: $dark-gray;
     }
 
     &__nav {
@@ -88,7 +110,6 @@
     }
 
     @media screen and (max-width: 840px) {
-
         &__nav {
             flex-direction: column;
             justify-content: center;
@@ -128,7 +149,18 @@
             .main-header__nav {
                 clip-path: circle(2000px at 100% -20%);
                 transition: all 0.75s ease-out;
-                background-color: $gray;
+                background-color: $light;
+            }
+            .main-header{
+                &__button {
+                    color: $dark;
+                }
+                &__button:hover {
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: $contrast;
+                    background-color: $dark-gray;
+                }
             }
 
             .main-header__nav__link {

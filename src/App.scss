@@ -1,9 +1,16 @@
 @import "./Variables.scss";
 
-body{
-  margin: 0;
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
-.App {
-  font-family: 'Handlee';
-  overflow: hidden;
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
