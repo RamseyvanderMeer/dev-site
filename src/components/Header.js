@@ -34,10 +34,14 @@ const Header = () => {
             dataLine.lineTo(i * 2.5, canvas.height * 0.5 + waveA * waveB * waveC * 66);
         }
         dataLine.lineTo(document.documentElement.clientWidth, document.documentElement.clientHeight);
-        dataLine.fillStyle = color;
+        var my_gradient = dataLine.createLinearGradient(0, 0, document.documentElement.clientWidth * .5, 0);
+        my_gradient.addColorStop(0, "#C9D6FF");
+        my_gradient.addColorStop(1, "#E2E2E2");
+        dataLine.fillStyle = my_gradient;
+        dataLine.fill();
         // dataLine.fillStyle = "red";
         // dataLine.fill();
-        dataLine.fill();
+        // dataLine.fill();
         dataLine.closePath();
     }
 
