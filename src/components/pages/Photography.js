@@ -25,7 +25,7 @@ export default class Photography extends React.Component {
                 <div className="gallery__gallery">
                     {
                         listOfImages.map(
-                            (image, index) => <div onClick={() => this.setState({ open: !this.state.open, imagePath: image })} className="gallery__container"><img className="gallery__image" key={index} src={image} alt="" /></div>,
+                            (image, index) => <div onClick={() => this.setState({ open: !this.state.open, imagePath: image })} className="gallery__container"><img className="gallery__image" key={index} src={image} alt="small" /></div>,
                         )
                     }
                 </div>

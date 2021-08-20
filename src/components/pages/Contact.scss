@@ -1,5 +1,133 @@
 @import '../../Variables.scss';
 
-.contact-container{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.contact{
+    background-color: $gray;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index:-1;
+}
+
+.container {
+  position: absolute;
+  padding: 2%;
+  width: 90%;
+  box-shadow: 1px 1px 4px 1px $dark;
+  background-color: $dark-gray;
+  top: 42.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:-1;
+}
+
+.container form {
+  width: 100%;
+  padding: 10px;
+}
+
+.container form label {
+  letter-spacing: 0.1rem;
+  display: block;
+  margin-bottom: 3px;
+  color: white;
+}
+
+.container input,
+.container textarea {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border: none;
+  box-shadow: 1px 1px 4px 1px rgb(58, 57, 57);
+}
+
+.container input:focus,
+.container textarea:focus {
+  box-shadow: 1px 1px 4px 1px rgb(49, 170, 240);
+}
+
+.singleItem {
+  margin: 10px 0;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+}
+
+.btn button {
+  width: 150px;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  margin-top: 5px;
+  color: $gray;
+}
+
+.btn button:hover {
+  border: 1px solid #fefefe;
+  background-color: $light-gray;
+  cursor: pointer;
+}
+
+.msg {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  letter-spacing: 0.2rem;
+  font-style: italic;
+  width: 340px;
+  padding: 3px;
+  font-size: 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: none;
+  color: rgb(5, 110, 5);
+  background-color: white;
+}
+
+.msgAppear {
+  display: block;
+}
+
+@media screen and (min-width: 664px) {
+  .container {
+    width: 95%;
+    top: 52.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 664px) {
+  .container {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    margin: 100px auto;
+  }
+}
+
+@media screen and (min-width: 986px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .container {
+    width: 40%;
+  }
 }
