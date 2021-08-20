@@ -30,7 +30,7 @@ const Header = () => {
         dataLine.clearRect(0, 0, canvas.width, canvas.height);
 
         dataLine.beginPath();
-        for (let i = -400; i <= canvas.width; i++) {
+        for (let i = -1000; i <= canvas.width; i++) {
 
             let waveA = Math.sin(time + i * 0.0211)
             let waveB = Math.sin(time + i * 0.028)
