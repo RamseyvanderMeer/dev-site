@@ -38,7 +38,7 @@
     background: #C9D6FF; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #C9D6FF, #E2E2E2 50%); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left,#C9D6FF ,#E2E2E2 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    z-index: 100;
+    z-index: 2;
     white-space: nowrap;
     display: flex;
     align-items: center;
@@ -49,14 +49,15 @@
         position: relative;
         top: -150px;
         background-color: transparent;
-        pointer-events: none; 
+        z-index: 1;
+        width: 100vw;
     }
 
     &__title {
         display: flex;
         padding: 0 2rem 0 1rem;
         color: $dark;
-        z-index: 1;
+        z-index: 2;
         font-size: 1.45em;
         font-weight: 700;
 
