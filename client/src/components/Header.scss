@@ -5,6 +5,10 @@
     height: $navbar-height;
 }
 
+.pass{
+    pointer-events: none;
+}
+
 .bar1,
 .bar2,
 .bar3 {
@@ -13,6 +17,7 @@
     padding: 1px;
     margin: 8px;
     transition: all 0.5s ease-in-out;
+    pointer-events: auto;
 }
 
 .animateBar.bar1 {
@@ -89,6 +94,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 3rem;
+        pointer-events: auto;
 
         &__links {
             display: flex;
@@ -121,6 +127,7 @@
             width: 100%;
             background: white;
             clip-path: circle(4rem at 95% -20%);
+            pointer-events: auto;
 
             &__flex-helper {
                 display: none;

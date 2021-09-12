@@ -52,7 +52,7 @@ const Header = () => {
     init()
 
     return (
-        <header>
+        <header className="pass">
             <div className={`main-header ${expanded ? "expanded" : "collapsed"}`}>
 
                 <div className="main-header__title">
